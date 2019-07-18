@@ -20,4 +20,13 @@ router.get("/recipes/:id/shoppingList", async (req, res, next) => {
   }
 });
 
+router.get("/recipes/:id/instructions", async (req, res, next) => {
+  try {
+    const instructions = await controller.getRecipeInstructions(req.params.id);
+    res.status(200).json(instructions);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

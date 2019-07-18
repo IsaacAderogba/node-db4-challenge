@@ -6,5 +6,8 @@ module.exports = {
   },
   getRecipeIngredients: async function(recipe_id) {
     return await Recipes.findRecipeIngredients(recipe_id);
+  },
+  getRecipeInstructions: async function(recipe_id) {
+    return await Recipes.findRecipeInstructions(recipe_id);
   }
 }
