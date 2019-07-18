@@ -29,4 +29,14 @@ router.get("/recipes/:id/instructions", async (req, res, next) => {
   }
 });
 
+router.get("/recipes/:id", async (req, res, next) => {
+  try {
+    const recipe = await controller.getRecipeById(req.params.id)
+
+    res.status(200).json(recipe)
+  } catch (err) {
+    next(err);
+  }
+})
+
 module.exports = router;

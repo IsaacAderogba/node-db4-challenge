@@ -9,5 +9,8 @@ module.exports = {
   },
   getRecipeInstructions: async function(recipe_id) {
     return await Recipes.findRecipeInstructions(recipe_id);
+  },
+  getRecipeById: async function(recipe_id) {
+    return await Recipes.findRecipeById(recipe_id);
   }
 }

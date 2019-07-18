@@ -31,18 +31,8 @@ module.exports = {
       )
       .where({ recipes_id: recipe_id })
       .orderBy("step_number", "asc");
-
-    /*SELECT
-  ingredient_name,
-  ingredient_unit,
-  quantity,
-  step_number
-FROM recipes
-JOIN recipe_instructions
-ON recipes.id = recipe_instructions.recipes_id
-JOIN ingredients
-ON ingredients.id = recipe_instructions.ingredients_id
-ORDER BY step_number ASC 
-*/
+  },
+  findRecipeById: function(recipe_id) {
+    return db('recipes').where({id: recipe_id}).first();
   }
 };
