@@ -34,10 +34,3 @@ exports.down = function(knex) {
     .dropTableIfExists("ingredients")
     .dropTableIfExists("recipes");
 };
-
-exports.down = function(knex) {
-  return knex.schema
-    .dropTableIfExists("courses")
-    .dropTableIfExists("emails")
-    .dropTableIfExists("users");
-};
