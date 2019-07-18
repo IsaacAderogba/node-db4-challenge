@@ -16,13 +16,17 @@ exports.up = function(knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("recipes");
+        .inTable("recipes")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
       table
         .integer("ingredients_id")
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("ingredients");
+        .inTable("ingredients")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
       table.float("quantity").notNullable();
       table.integer("step_number").notNullable();
     });
